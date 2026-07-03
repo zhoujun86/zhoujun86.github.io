@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jun · 个人简历</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --card: #161b22;
+    --border: #30363d;
+    --text: #e6edf3;
+    --text-dim: #8b949e;
+    --accent: #d4af37;
+    --accent-soft: rgba(212, 175, 55, 0.12);
+    --spacing: 24px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container { max-width: 820px; margin: 0 auto; padding: 48px 24px 80px; }
+
+  /* Header */
+  .header {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    padding-bottom: 36px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 36px;
+  }
+
+  .avatar {
+    width: 96px; height: 96px;
+    border-radius: 50%;
+    background: #1c2128;
+    border: 2px solid var(--border);
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+  .avatar svg { display: block; }
+
+  .header-info h1 { font-size: 28px; font-weight: 700; letter-spacing: 1px; }
+  .header-info .title { color: var(--accent); font-size: 15px; margin-top: 4px; }
+  .header-info .contact { display: flex; flex-wrap: wrap; gap: 6px 20px; margin-top: 14px; }
+  .header-info .contact span { font-size: 13px; color: var(--text-dim); display: inline-flex; align-items: center; gap: 5px; }
+  .header-info .contact svg { width: 14px; height: 14px; opacity: 0.7; }
+
+  /* Section */
+  .section { margin-bottom: 40px; }
+  .section-title {
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent);
+    margin-bottom: 20px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .section-title::after { content: ""; flex: 1; height: 1px; background: var(--border); }
+
+  /* Summary */
+  .summary {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 24px 28px;
+    font-size: 15px;
+    color: var(--text-dim);
+  }
+  .summary strong { color: var(--text); }
+
+  /* Timeline */
+  .timeline { position: relative; padding-left: 24px; }
+  .timeline::before { content: ""; position: absolute; left: 5px; top: 6px; bottom: 6px; width: 2px; background: var(--border); }
+
+  .timeline-item { position: relative; margin-bottom: 28px; }
+  .timeline-item:last-child { margin-bottom: 0; }
+  .timeline-item::before {
+    content: ""; position: absolute; left: -23px; top: 7px;
+    width: 12px; height: 12px; border-radius: 50%;
+    background: var(--bg); border: 2px solid var(--accent);
+  }
+
+  .timeline-date { font-size: 12px; color: var(--accent); font-weight: 600; letter-spacing: 0.5px; }
+  .timeline-role { font-size: 16px; font-weight: 600; margin-top: 2px; }
+  .timeline-org { font-size: 14px; color: var(--text-dim); margin-top: 2px; }
+  .timeline-desc { font-size: 14px; color: var(--text-dim); margin-top: 8px; }
+  .timeline-desc ul { list-style: none; padding-left: 0; }
+  .timeline-desc li { padding-left: 16px; position: relative; margin-bottom: 4px; }
+  .timeline-desc li::before { content: "—"; position: absolute; left: 0; color: var(--accent); opacity: 0.6; }
+
+  /* Skills grid */
+  .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+  .skill-tag {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 14px;
+    transition: border-color 0.2s;
+  }
+  .skill-tag:hover { border-color: var(--accent); }
+  .skill-tag .skill-cat { font-size: 11px; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+  .skill-tag .skill-name { font-weight: 500; }
+
+  /* Education */
+  .edu-item { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 20px 24px; margin-bottom: 12px; }
+  .edu-item:last-child { margin-bottom: 0; }
+  .edu-degree { font-size: 16px; font-weight: 600; }
+  .edu-year { font-size: 13px; color: var(--text-dim); margin-top: 4px; }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    .header { flex-direction: column; text-align: center; align-items: center; }
+    .header-info .contact { justify-content: center; }
+    .skills-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="avatar">
+      <svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
+        <defs>
+          <linearGradient id="skin" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#e8d4b8"/>
+            <stop offset="100%" stop-color="#d4bc98"/>
+          </linearGradient>
+          <linearGradient id="suitGrad" x1="20%" y1="30%" x2="80%" y2="70%">
+            <stop offset="0%" stop-color="#4a5058"/>
+            <stop offset="100%" stop-color="#32373f"/>
+          </linearGradient>
+          <clipPath id="headClip"><ellipse cx="48" cy="36" rx="22" ry="25"/></clipPath>
+        </defs>
+        <!-- Neck -->
+        <rect x="38" y="54" width="20" height="16" fill="url(#skin)"/>
+        <!-- Suit jacket -->
+        <path d="M18 96 L28 58 L40 56 L48 64 L56 56 L68 58 L78 96Z" fill="url(#suitGrad)" stroke="#5a626e" stroke-width="0.5"/>
+        <!-- Lapel left -->
+        <path d="M28 58 L34 72 L42 66 Z" fill="#3a3f47"/>
+        <!-- Lapel right -->
+        <path d="M68 58 L62 72 L54 66 Z" fill="#3a3f47"/>
+        <!-- Shirt white collar left -->
+        <path d="M37 55 Q35 52 33 53 L29 60 L39 65 Z" fill="#f0ece8" stroke="#ccc" stroke-width="0.3"/>
+        <!-- Shirt white collar right -->
+        <path d="M59 55 Q61 52 63 53 L67 60 L57 65 Z" fill="#f0ece8" stroke="#ccc" stroke-width="0.3"/>
+        <!-- Head base (oval face, buzz cut hair) -->
+        <ellipse cx="48" cy="36" rx="22" ry="25" fill="url(#skin)"/>
+        <!-- Hair - very short buzz cut -->
+        <ellipse cx="48" cy="19" rx="21" ry="12" fill="#c9a87c" opacity="0.85"/>
+        <ellipse cx="48" cy="17" rx="19" ry="9" fill="#b89a70" opacity="0.7"/>
+        <!-- Ears -->
+        <ellipse cx="26" cy="38" rx="4" ry="6" fill="url(#skin)"/>
+        <ellipse cx="70" cy="38" rx="4" ry="6" fill="url(#skin)"/>
+        <!-- Eyebrows - subtle -->
+        <path d="M34 28 Q38 26 43 27.5" fill="none" stroke="#a08868" stroke-width="1" stroke-linecap="round" opacity="0.6"/>
+        <path d="M53 27.5 Q58 26 62 28" fill="none" stroke="#a08868" stroke-width="1" stroke-linecap="round" opacity="0.6"/>
+        <!-- Eyes -->
+        <ellipse cx="38.5" cy="34" rx="3.5" ry="2.2" fill="#1a1a1a"/>
+        <ellipse cx="57.5" cy="34" rx="3.5" ry="2.2" fill="#1a1a1a"/>
+        <!-- Eye catchlights -->
+        <circle cx="39.5" cy="33.3" r="0.8" fill="#fff" opacity="0.85"/>
+        <circle cx="58.5" cy="33.3" r="0.8" fill="#fff" opacity="0.85"/>
+        <!-- Nose -->
+        <path d="M48 37 L46 44 L49 45" fill="none" stroke="#c4a882" stroke-width="1" stroke-linecap="round" opacity="0.5"/>
+        <!-- Mouth - subtle closed, slight hint of lips -->
+        <path d="M41 51 Q48 53.5 55 51" fill="none" stroke="#b89078" stroke-width="1.2" stroke-linecap="round" opacity="0.5"/>
+        <!-- Subtle jawline definition -->
+        <path d="M27 42 Q24 48 28 56" fill="none" stroke="#c4aa86" stroke-width="0.5" opacity="0.3"/>
+        <path d="M69 42 Q72 48 68 56" fill="none" stroke="#c4aa86" stroke-width="0.5" opacity="0.3"/>
+      </svg>
+    </div>
+    <div class="header-info">
+      <h1>Jun</h1>
+      <div class="title">高级管理人员 · 合规审核 & 董事会事务</div>
+      <div class="contact">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg> jun@example.com</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 138-0000-0000</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> 上海市</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg> github.com/jun8621</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Summary -->
+  <div class="section">
+    <div class="section-title">个人简介</div>
+    <div class="summary">
+      拥有 <strong>13+ 年</strong>企业合规与公司治理领域管理经验，现任某集团高级管理人员，全面负责<strong>合规审核</strong>及<strong>董事会事务</strong>工作。深谙行政合规、人事与劳动合规、财务内控合规、网络安全与数据合规四大领域，熟悉《公司法》《个人信息保护法》《数据安全法》《网络安全法》等核心法规体系。擅长将合规要求嵌入企业治理流程，建立风险预警机制，为董事会决策提供专业支持。
+    </div>
+  </div>
+
+  <!-- Experience -->
+  <div class="section">
+    <div class="section-title">工作经历</div>
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-date">2012 — 至今</div>
+        <div class="timeline-role">高级管理人员 · 合规与董事会事务</div>
+        <div class="timeline-org">某集团总部 · 上海</div>
+        <div class="timeline-desc">
+          <ul>
+            <li>统筹集团合规管理体系建设，覆盖行政合规、人事与劳动合规、财务内控合规、网络安全与数据合规四大板块，构建从制度到落地的全链路合规治理框架</li>
+            <li>负责董事会会议筹备、议程编制、决议起草与执行跟踪，确保决策流程合法合规、高效闭环；为重大投资并购、关联交易等议题提供前置合规意见</li>
+            <li>主导财务监管工作，建立预算执行审计与资金使用合规审查机制，监督大额支出审批流程，防范财务违规与资金风险</li>
+            <li>统筹行政审批事务，对接市场监管、网信、人社等主管部门，办理资质变更、年检年报、行政许可申请及行政检查应对</li>
+            <li>负责人事规划与用工合规，制定组织架构调整方案与编制管理规则，审核劳动合同、竞业限制与保密协议，处理劳动争议与裁员合规</li>
+            <li>牵头网络安全等级保护测评及数据合规专项，完成个人信息保护影响评估（PIA），建立数据分类分级与跨境数据流动管理机制</li>
+            <li>建立内部合规审查机制，年度审核合同/制度文件 300+ 份，风险预警率提升 40%，推动合规问题整改闭环率达标</li>
+            <li>对接外部法律顾问与监管机构，处理行政检查应对、合规整改与监管沟通，维护企业合规信用</li>
+            <li>组织全员合规培训与文化建设，累计覆盖 2000+ 人次，推动合规意识从"被动遵守"向"主动嵌入"转变</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Core Skills -->
+  <div class="section">
+    <div class="section-title">核心能力</div>
+    <div class="skills-grid">
+      <div class="skill-tag"><div class="skill-cat">合规体系</div><div class="skill-name">合规管理体系建设</div></div>
+      <div class="skill-tag"><div class="skill-cat">公司治理</div><div class="skill-name">董事会事务管理</div></div>
+      <div class="skill-tag"><div class="skill-cat">行政合规</div><div class="skill-name">行政审批与监管应对</div></div>
+      <div class="skill-tag"><div class="skill-cat">人事合规</div><div class="skill-name">劳动用工合规审查</div></div>
+      <div class="skill-tag"><div class="skill-cat">财务内控</div><div class="skill-name">内控体系与审计</div></div>
+      <div class="skill-tag"><div class="skill-cat">数据合规</div><div class="skill-name">等保 / 个保法 / 数安法</div></div>
+      <div class="skill-tag"><div class="skill-cat">风险管控</div><div class="skill-name">合规风险评估与预警</div></div>
+      <div class="skill-tag"><div class="skill-cat">制度建设</div><div class="skill-name">制度起草与标准化</div></div>
+    </div>
+  </div>
+
+  <!-- Education -->
+  <div class="section">
+    <div class="section-title">教育背景</div>
+    <div class="edu-item">
+      <div class="edu-degree">华东师范大学</div>
+      <div class="edu-year">公共管理相关专业</div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
